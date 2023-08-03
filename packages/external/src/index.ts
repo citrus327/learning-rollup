@@ -60,10 +60,16 @@ export const external = (options: ExternalOptions = {}): Plugin => {
       };
 
       inputOptions.external = (source, importer, isResolved) => {
-        return (
+        const result =
           fn(source, importer, isResolved) ||
-          extendDeps(source, importer, isResolved)
-        );
+          extendDeps(source, importer, isResolved);
+
+        if (result && source) {
+          // TODO: integrate DEBUG
+          this.info(`${source} is externalized`);
+        }
+
+        return result;
       };
     },
   };

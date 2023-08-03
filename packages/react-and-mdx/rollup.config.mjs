@@ -4,6 +4,9 @@
 import { readFileSync } from "node:fs";
 import { builtinModules } from "module";
 import typescript from "@rollup/plugin-typescript";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
 
 /**
  * Create a base rollup config
@@ -13,9 +16,8 @@ import typescript from "@rollup/plugin-typescript";
  */
 function createConfig({ pkg, external = [] }) {
   return {
-    input: "src/index.ts",
-    external: Object.keys(pkg.dependencies || {})
-      .concat(Object.keys(pkg.peerDependencies || {}))
+    input: "src/index.mts",
+    external: Object.keys(pkg.peerDependencies || {})
       .concat(builtinModules)
       .concat(external),
     onwarn: (warning) => {
@@ -38,6 +40,9 @@ function createConfig({ pkg, external = [] }) {
       },
     ],
     plugins: [
+      commonjs(),
+      nodeResolve(),
+      json(),
       typescript({
         sourceMap: true,
         tsconfig: "./tsconfig.json",

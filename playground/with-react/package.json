@@ -20,11 +20,13 @@
     "@types/react": "^18.2.18",
     "rollup": "^3.2.3",
     "rollup-plugin-external": "workspace:*",
-    "rollup-plugin-log-prefix": "workspace: *",
+    "rollup-plugin-log-prefix": "workspace:*",
+    "rollup-plugin-react-and-mdx": "workspace:*",
     "typescript": "^4.8.3"
   },
   "dependencies": {
     "@blizzbolts/typus": "^0.1.0",
+    "@mdx-js/react": "^2.3.0",
     "jquery": "^3.7.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",

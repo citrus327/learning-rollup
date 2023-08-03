@@ -29,6 +29,9 @@
     "rollup": "^1.20.0||^2.0.0||^3.0.0"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-typescript": "^11.1.2",
     "@types/node": "^20.4.5",
     "rollup": "^3.2.3",
@@ -42,6 +45,12 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "tslib": "^2.6.1"
+    "@mdx-js/mdx": "^2.0.0",
+    "@mdx-js/react": "^2.3.0",
+    "@rollup/pluginutils": "^5.0.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-mdx-frontmatter": "^3.0.0",
+    "source-map": "^0.7.0",
+    "vfile": "^5.0.0"
   }
 }

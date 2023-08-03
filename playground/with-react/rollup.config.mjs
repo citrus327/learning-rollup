@@ -4,7 +4,7 @@ import ts from "@rollup/plugin-typescript";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import { logPrefix } from "rollup-plugin-log-prefix";
-
+import { reactAndMdx } from "rollup-plugin-react-and-mdx";
 export default defineConfig({
   input: "src/index.ts",
   output: [
@@ -23,6 +23,8 @@ export default defineConfig({
     ts({
       sourceMap: true,
     }),
+    // mdx(),
+    reactAndMdx(),
     external({
       includeDeps: true,
     }),
