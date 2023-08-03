@@ -1,3 +1,3 @@
-export interface TemplateOption {
-  name: string;
+export interface LogPrefixOptions {
+  prefix: string;
 }

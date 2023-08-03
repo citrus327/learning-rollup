@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-template",
+  "name": "rollup-plugin-log-prefix",
   "version": "1.0.0",
   "description": "a rollup plugin",
   "author": "citrus327",

@@ -3,10 +3,10 @@ import { defineConfig } from "rollup";
 import ts from "@rollup/plugin-typescript";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { logPrefix } from "rollup-plugin-log-prefix";
 
 export default defineConfig({
   input: "src/index.ts",
-  external: "jquery",
   output: [
     {
       file: "./dist/index.cjs",
@@ -20,9 +20,14 @@ export default defineConfig({
   plugins: [
     commonjs(),
     nodeResolve(),
-    ts(),
+    ts({
+      sourceMap: true,
+    }),
     external({
       includeDeps: false,
+    }),
+    logPrefix({
+      prefix: "[Docit]",
     }),
   ],
 });

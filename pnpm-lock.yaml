@@ -6,9 +6,32 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      resolve:
+        specifier: ^1.22.2
+        version: registry.npmmirror.com/resolve@1.22.2
 
   packages/external:
+    dependencies:
+      tslib:
+        specifier: ^2.6.1
+        version: registry.npmmirror.com/tslib@2.6.1
+    devDependencies:
+      '@rollup/plugin-typescript':
+        specifier: ^11.1.2
+        version: registry.npmmirror.com/@rollup/plugin-typescript@11.1.2(rollup@3.27.0)(tslib@2.6.1)(typescript@4.8.3)
+      '@types/node':
+        specifier: ^20.4.5
+        version: registry.npmmirror.com/@types/node@20.4.5
+      rollup:
+        specifier: ^3.2.3
+        version: registry.npmmirror.com/rollup@3.27.0
+      typescript:
+        specifier: ^4.8.3
+        version: registry.npmmirror.com/typescript@4.8.3
+
+  packages/log-prefix:
     dependencies:
       tslib:
         specifier: ^2.6.1
@@ -47,6 +70,9 @@ importers:
 
   playground/simple-ts:
     dependencies:
+      '@blizzbolts/typus':
+        specifier: ^0.1.0
+        version: registry.npmmirror.com/@blizzbolts/typus@0.1.0
       jquery:
         specifier: ^3.7.0
         version: registry.npmmirror.com/jquery@3.7.0
@@ -59,6 +85,9 @@ importers:
       react:
         specifier: ^18.2.0
         version: registry.npmmirror.com/react@18.2.0
+      tslib:
+        specifier: ^2.6.1
+        version: registry.npmmirror.com/tslib@2.6.1
     devDependencies:
       '@rollup/plugin-commonjs':
         specifier: ^25.0.3
@@ -87,14 +116,21 @@ importers:
       rollup-plugin-external:
         specifier: workspace:*
         version: link:../../packages/external
-      rollup-plugin-peer-deps-external:
-        specifier: ^2.2.4
-        version: registry.npmmirror.com/rollup-plugin-peer-deps-external@2.2.4(rollup@3.27.0)
+      rollup-plugin-log-prefix:
+        specifier: 'workspace: *'
+        version: link:../../packages/log-prefix
       typescript:
         specifier: ^4.8.3
         version: registry.npmmirror.com/typescript@4.8.3
 
 packages:
+
+  registry.npmmirror.com/@blizzbolts/typus@0.1.0:
+    resolution: {integrity: sha512-nHaz5FmoMKMa9AjVHYjL0lW4pUQMDdSDsy5qtqdG3D0KH6+uzgYHyiE1IgoAcLXE/DtDdtNcxilZREkT5r7fBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@blizzbolts/typus/-/typus-0.1.0.tgz}
+    name: '@blizzbolts/typus'
+    version: 0.1.0
+    engines: {node: '>=14'}
+    dev: false
 
   registry.npmmirror.com/@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.15.tgz}
@@ -291,7 +327,6 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/function-bind/-/function-bind-1.1.1.tgz}
     name: function-bind
     version: 1.1.1
-    dev: true
 
   registry.npmmirror.com/glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/glob/-/glob-8.1.0.tgz}
@@ -313,7 +348,6 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: registry.npmmirror.com/function-bind@1.1.1
-    dev: true
 
   registry.npmmirror.com/inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/inflight/-/inflight-1.0.6.tgz}
@@ -345,7 +379,6 @@ packages:
     version: 2.12.1
     dependencies:
       has: registry.npmmirror.com/has@1.0.3
-    dev: true
 
   registry.npmmirror.com/is-module@1.0.0:
     resolution: {integrity: sha512-51ypPSPCoTEIN9dy5Oy+h4pShgJmPCygKfyRCISBI+JoWT/2oJvK8QPxmwv7b/p239jXrm9M1mlQbyKJ5A152g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-module/-/is-module-1.0.0.tgz}
@@ -424,7 +457,6 @@ packages:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/path-parse/-/path-parse-1.0.7.tgz}
     name: path-parse
     version: 1.0.7
-    dev: true
 
   registry.npmmirror.com/picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/picomatch/-/picomatch-2.3.1.tgz}
@@ -451,18 +483,6 @@ packages:
       is-core-module: registry.npmmirror.com/is-core-module@2.12.1
       path-parse: registry.npmmirror.com/path-parse@1.0.7
       supports-preserve-symlinks-flag: registry.npmmirror.com/supports-preserve-symlinks-flag@1.0.0
-    dev: true
-
-  registry.npmmirror.com/rollup-plugin-peer-deps-external@2.2.4(rollup@3.27.0):
-    resolution: {integrity: sha512-AWdukIM1+k5JDdAqV/Cxd+nejvno2FVLVeZ74NKggm3Q5s9cbbcOgUPGdbxPi4BXu7xGaZ8HG12F+thImYu/0g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup-plugin-peer-deps-external/-/rollup-plugin-peer-deps-external-2.2.4.tgz}
-    id: registry.npmmirror.com/rollup-plugin-peer-deps-external/2.2.4
-    name: rollup-plugin-peer-deps-external
-    version: 2.2.4
-    peerDependencies:
-      rollup: '*'
-    dependencies:
-      rollup: registry.npmmirror.com/rollup@3.27.0
-    dev: true
 
   registry.npmmirror.com/rollup@3.27.0:
     resolution: {integrity: sha512-aOltLCrYZ0FhJDm7fCqwTjIUEVjWjcydKBV/Zeid6Mn8BWgDCUBBWT5beM5ieForYNo/1ZHuGJdka26kvQ3Gzg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-3.27.0.tgz}
@@ -479,7 +499,6 @@ packages:
     name: supports-preserve-symlinks-flag
     version: 1.0.0
     engines: {node: '>= 0.4'}
-    dev: true
 
   registry.npmmirror.com/tslib@2.6.1:
     resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.6.1.tgz}
