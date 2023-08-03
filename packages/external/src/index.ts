@@ -52,7 +52,11 @@ export const external = (options: ExternalOptions = {}): Plugin => {
           ...(includeDeps ? Object.keys(deps) : []),
           ...Object.keys(peerDeps),
         ];
-        return totalDeps.includes(source);
+        // if has a dep called react, then it should match react/jsx-runtime
+        return totalDeps.some((o) => {
+          const regexp = new RegExp(`^${o}(\\/\.+)*$`);
+          return regexp.test(source);
+        });
       };
 
       inputOptions.external = (source, importer, isResolved) => {

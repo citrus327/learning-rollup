@@ -17,6 +17,7 @@
     "@types/lodash": "^4.14.196",
     "@types/lodash-es": "^4.17.8",
     "@types/node": "^20.4.5",
+    "@types/react": "^18.2.18",
     "rollup": "^3.2.3",
     "rollup-plugin-external": "workspace:*",
     "rollup-plugin-log-prefix": "workspace: *",

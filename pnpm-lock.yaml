@@ -187,6 +187,9 @@ importers:
       '@types/node':
         specifier: ^20.4.5
         version: registry.npmmirror.com/@types/node@20.4.5
+      '@types/react':
+        specifier: ^18.2.18
+        version: registry.npmmirror.com/@types/react@18.2.18
       rollup:
         specifier: ^3.2.3
         version: registry.npmmirror.com/rollup@3.27.0
@@ -332,10 +335,32 @@ packages:
     version: 20.4.5
     dev: true
 
+  registry.npmmirror.com/@types/prop-types@15.7.5:
+    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/prop-types/-/prop-types-15.7.5.tgz}
+    name: '@types/prop-types'
+    version: 15.7.5
+    dev: true
+
+  registry.npmmirror.com/@types/react@18.2.18:
+    resolution: {integrity: sha512-da4NTSeBv/P34xoZPhtcLkmZuJ+oYaCxHmyHzwaDQo9RQPBeXV+06gEk2FpqEcsX9XrnNLvRpVh6bdavDSjtiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/react/-/react-18.2.18.tgz}
+    name: '@types/react'
+    version: 18.2.18
+    dependencies:
+      '@types/prop-types': registry.npmmirror.com/@types/prop-types@15.7.5
+      '@types/scheduler': registry.npmmirror.com/@types/scheduler@0.16.3
+      csstype: registry.npmmirror.com/csstype@3.1.2
+    dev: true
+
   registry.npmmirror.com/@types/resolve@1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/resolve/-/resolve-1.20.2.tgz}
     name: '@types/resolve'
     version: 1.20.2
+    dev: true
+
+  registry.npmmirror.com/@types/scheduler@0.16.3:
+    resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/scheduler/-/scheduler-0.16.3.tgz}
+    name: '@types/scheduler'
+    version: 0.16.3
     dev: true
 
   registry.npmmirror.com/@types/sizzle@2.3.3:
@@ -369,6 +394,12 @@ packages:
     resolution: {integrity: sha512-W9pAhw0ja1Edb5GVdIF1mjZw/ASI0AlShXM83UUGe2DVr5TdAPEA1OA8m/g8zWp9x6On7gqufY+FatDbC3MDQg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commondir/-/commondir-1.0.1.tgz}
     name: commondir
     version: 1.0.1
+    dev: true
+
+  registry.npmmirror.com/csstype@3.1.2:
+    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-3.1.2.tgz}
+    name: csstype
+    version: 3.1.2
     dev: true
 
   registry.npmmirror.com/deepmerge@4.3.1:

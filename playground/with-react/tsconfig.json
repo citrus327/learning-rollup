@@ -13,7 +13,7 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2019",
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
   "exclude": ["dist", "node_modules", "test/types"]
 }
