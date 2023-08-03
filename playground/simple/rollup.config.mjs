@@ -1,4 +1,4 @@
-import { template } from "rollup-plugin-external";
+import { logPrefix } from "rollup-plugin-log-prefix";
 import { defineConfig } from "rollup";
 export default defineConfig({
   input: "src/index.mjs",
@@ -12,5 +12,9 @@ export default defineConfig({
       format: "esm",
     },
   ],
-  plugins: [template()],
+  plugins: [
+    logPrefix({
+      prefix: "SIMPLE",
+    }),
+  ],
 });
