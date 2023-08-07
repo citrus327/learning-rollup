@@ -42,7 +42,7 @@ export function reactAndMdx(options: any): Plugin {
   const filter = createFilter(include, exclude);
 
   return {
-    name: "@mdx-js/rollup",
+    name: "DOCIT",
 
     async load(id) {
       const file = new VFile({ path: id });
